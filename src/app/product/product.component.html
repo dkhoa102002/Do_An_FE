@@ -41,23 +41,62 @@
            </div>
          </div>
      </div></div>
-<div class="product-grid">
-  <div class="product" *ngFor="let product of visibleAndFilteredProducts">
-          <img [src]="product.imageUrl" alt="{{ product.name }}">
-          <h5>{{ product.name }}</h5>
-          <div>
-            <p>
-              <span 
-                class="original-price" 
-                *ngIf="product.discountPercent > 0" 
-                [ngStyle]="{ 'text-decoration': product.discountPercent > 0 ? 'line-through' : 'none' }"
-              >
-                {{ product.price | currency }}
-              </span>
-              {{ calculateDiscountedPrice(product) | currency }}
-            </p>
-            <p *ngIf="product.discountPercent">Sale: {{ product.discountPercent }}%</p>
-          </div>
+<div class="product-grid"> 
+  <div class="product">
+    <img src="../assets/hinh/Zhongli.jpg" class="d-block w-100" alt="...">
+    <p style="font-weight: bolder;">Tên sản phẩm</p>
+    <p style="margin-top: -15px; font-weight: bolder;">Giá</p>
+    <div class="cb">
+    <select class="form-select form-select-sm " aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; margin-top: -10px; margin-bottom: -15px; margin-right: 5px;">
+      <option selected>Loại</option>
+      <option value="1">T-Shirt</option>
+      <option value="2">Jacket</option>
+      <option value="3">Hoodie</option>
+      <option value="4">...</option>
+    </select>
+    <select class="form-select form-select-sm "  aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; margin-top: -10px; margin-bottom: -15px; color: #000000; background-color: #cacaca; ">
+      <option selected>Màu</option>
+      <option value="1" style="color: #000000; background-color: #ffffff;" >Trắng</option>
+      <option value="2" style="color: #ffffff; background-color: #000000;">Đen</option>
+      <option value="3" style="color: #ffffff; background-color: #400000;">Đỏ</option>
+      <option value="4">...</option>
+    </select>
+    </div>
+    <br>
+    <div class="size">
+      <label class="form-check-label" for="inlineRadio1" style="margin-right: 10px;  font-weight: bolder;">Size</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">S</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">L</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">XL</label>
+      </div>
+    </div>
+    <div class="size">
+      <label class="form-check-label" for="inlineRadio1" style="margin-right: 10px;  font-weight: bolder;">Giới tính</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Nam</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Nữ</label>
+      </div>
+      </div>
+    <div class="form-floating">
+    <textarea class="form-control" placeholder="Mô tả" id="floatingTextarea2" style="height: 70px; width: 100%;" required></textarea>
+    <label for="floatingTextarea2">Mô tả</label>
+    </div>     
 </div>
 </div>
 </div>
