@@ -1,13 +1,13 @@
 <p class="nb">ĐĂNG NHẬP</p>
 <div class="div">
-    <form class="row g-3" >
+    <form class="row g-3" (ngSubmit)="onSubmit()">
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Tên đăng nhập:</label>
-          <input type="email" class="form-control" id="inputEmail4" >
+          <label for="inputEmail4" class="form-label" >Tên đăng nhập:</label>
+          <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="khachHang.tenDangNhap" name="ten_dang_nhap">
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Mật khẩu:</label>
-          <input type="password" class="form-control" id="inputPassword4">
+          <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="khachHang.matKhau" name="mat_khau">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Đăng nhập</button>

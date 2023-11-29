@@ -14,7 +14,13 @@ import { LienheComponent } from './lienhe/lienhe.component';
 import { Sanpham1Component } from './sanpham1/sanpham1.component';
 import { GiohangComponent } from './giohang/giohang.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
-
+import { KhachHangListComponent } from './khach_hang/khach-hang-list/khach-hang-list.component';
+import { SanPhamListComponent } from './san_pham/san-pham-list/san-pham-list.component';
+import { LoaiSanPhamListComponent } from './loai_san_pham/loai-san-pham-list/loai-san-pham-list.component';
+import { DonHangListComponent } from './don_hang/don-hang-list/don-hang-list.component';
+import { ChiTietDonHangListComponent } from './chi_tiet_don_hang/chi-tiet-don-hang-list/chi-tiet-don-hang-list.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,12 @@ import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
     LienheComponent,
     Sanpham1Component,
     GiohangComponent,
-    ThanhtoanComponent
+    ThanhtoanComponent,
+    KhachHangListComponent,
+    SanPhamListComponent,
+    LoaiSanPhamListComponent,
+    DonHangListComponent,
+    ChiTietDonHangListComponent
 
   ],
   imports: [
@@ -36,6 +47,7 @@ import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    HttpClientModule
     
   ],
   providers: [],

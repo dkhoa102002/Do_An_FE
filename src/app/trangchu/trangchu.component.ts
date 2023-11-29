@@ -1,37 +1,22 @@
 // trang-chu.component.ts
 
-import { Component, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { CommentService } from './comment.service';
 import { Comment } from './comment.model';
 import { Router } from '@angular/router';
+import { SanPham } from '../san_pham/san-pham';
+import { SanPhamService } from '../san_pham/san-pham.service';
 @Component({
   selector: 'app-trangchu',
   templateUrl: './trangchu.component.html',
   styleUrls: ['./trangchu.component.css']
 })
 
-export class TrangChuComponent {
-  ImageUrl: string ='../assets/hinh/1310558.jpg'
-    products = [
-        {
-          name: 'Sản phẩm 1',
-          description: 'Mô tả sản phẩm 1',
-          price: 20.99,
-          imageUrl: '../assets/hinh/Zhongli.jpg'
-        },
-        {
-          name: 'Sản phẩm 2',
-          description: 'Mô tả sản phẩm 2',
-          price: 30.99,
-          imageUrl: '../assets/hinh/Zhongli1.jpg'
-        },
-        {
-          name: 'Sản phẩm 2',
-          description: 'Mô tả sản phẩm 2',
-          price: 30.99,
-          imageUrl: '../assets/hinh/Zhongli2.jpg'
-        },    
-    ];
+export class TrangChuComponent implements OnInit {
+
+  sanPhams?: SanPham[];
+
+  
     event = [
       {
         Name: 'Tên sự kiện 1',
@@ -53,8 +38,16 @@ export class TrangChuComponent {
     @Input() comment!: Comment;
     newComment: Comment = { username: '', content: '', timestamp: new Date(), avatarUrl: 'path/to/avatar.jpg' };
     comments: Comment[] = [];
-    constructor(public commentService: CommentService, private renderer: Renderer2, private el: ElementRef, private router: Router) {}
+    constructor(public commentService: CommentService, private renderer: Renderer2, private el: ElementRef, private router: Router,private sanPhamService: SanPhamService) {}
   
+    ngOnInit(): void {
+      this.sanPhamService.getSanPhams().subscribe(data => {
+        this.sanPhams = data;
+        console.log(this.sanPhams);
+      });
+      alert(this.sanPhams);
+    }
+
     addComment(): void {
       if (this.newComment.username && this.newComment.content) {
         this.commentService.addComment(this.newComment);
