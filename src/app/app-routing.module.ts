@@ -10,6 +10,7 @@ import { ThanhcongcuComponent } from './thanhcongcu/thanhcongcu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ThanhtoanComponent } from './thanhtoan/thanhtoan.component';
 import { GiohangComponent } from './giohang/giohang.component';
+import { ThemSanPhamComponent } from './them-san-pham/them-san-pham.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'trangchu', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'products/:category/:cate', component: ProductComponent },
   { path: 'thanhtoan', component: ThanhtoanComponent },
   { path: 'giohang', component: GiohangComponent },
+  { path: 'themsp', component: ThemSanPhamComponent },
 
 
 ];

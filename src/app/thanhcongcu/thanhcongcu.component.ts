@@ -30,6 +30,8 @@ export class ThanhcongcuComponent implements OnInit {
     this.router.navigate(['/lienhe']);
     this.router.navigate(['/trangchu']);
     this.router.navigate(['/giohang']);
+    this.router.navigate(['/themsp']);
+
   }
   navigateToProduct(selectedCategory: string, selectedCate: string) {
     this.router.navigate(['/sanpham', selectedCategory, selectedCate]);

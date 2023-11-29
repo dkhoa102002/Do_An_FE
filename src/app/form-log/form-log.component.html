@@ -10,8 +10,11 @@
           <input type="password" class="form-control" id="inputPassword4" [(ngModel)]="khachHang.matKhau" name="mat_khau">
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Đăng nhập</button>
+          <button type="submit" class="btn btn-primary bt">Đăng nhập</button>
         </div>
+        <div>
+          <a routerLink="/form" class="dn">Chưa có tài khoản -- > <button (click)="navigateToForm()" class=" btn btn-primary">ĐĂNG KÝ</button> </a> 
+      </div>
       </form>
     </div>
     

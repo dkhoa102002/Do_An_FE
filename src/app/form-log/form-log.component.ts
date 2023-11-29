@@ -15,6 +15,7 @@ export class FormLogComponent {
 
   navigateToForm() {
     this.router.navigate(['/']);
+    this.router.navigate(['/form']);
   }
   onSubmit() {
     console.log(this.khachHang)

@@ -1,20 +1,22 @@
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 50px;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
   width: 60%;
   font-size: 15px;
   margin-right: 400px;
+  margin-bottom: 5%;
 }
 
 .product {
-  border: 1px solid #9f9f9f;
+  border: 1px none;
   padding: 10px 20px 10px 20px;
   transition: transform 0.3s;
-  margin-top: 3px;
-  width: 250px;
-  height: 350px;
+  margin-top: 3%;
+  width: 300px;
+  height: 400px;
   margin-left: 50%;
+  text-align: center;
 }
 
 .product:hover {
@@ -60,9 +62,9 @@
     text-align: center;
     font-size: 17px;
   }
- .p {
+ p {
     margin-left: 10px;
-    font-size: 25px;
+    font-size: 20px;
     width: 100%;
     font-weight: bolder;
     margin-top: 2% ;
@@ -99,13 +101,6 @@
   height: auto;
   display: flex;
   justify-content: center;
-}
-.cb {
-  display: flex;
-}
-.size {
-  width: 120%;
-  font-size: 13px;
 }
 
 

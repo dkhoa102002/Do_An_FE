@@ -21,6 +21,7 @@ import { DonHangListComponent } from './don_hang/don-hang-list/don-hang-list.com
 import { ChiTietDonHangListComponent } from './chi_tiet_don_hang/chi-tiet-don-hang-list/chi-tiet-don-hang-list.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ThemSanPhamComponent } from './them-san-pham/them-san-pham.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     SanPhamListComponent,
     LoaiSanPhamListComponent,
     DonHangListComponent,
-    ChiTietDonHangListComponent
+    ChiTietDonHangListComponent,
+    ThemSanPhamComponent
 
   ],
   imports: [
