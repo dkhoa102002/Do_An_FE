@@ -2,20 +2,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 50px;
-  width: 50%;
-  font-size: 20px;
-  margin-bottom: 20px;
+  width: 60%;
+  font-size: 15px;
   margin-right: 400px;
 }
 
 .product {
   border: 1px solid #9f9f9f;
   padding: 10px 20px 10px 20px;
-  text-align: center;
   transition: transform 0.3s;
-  margin-top: 10px;
-  width: 270px;
-  height: 300px;
+  margin-top: 3px;
+  width: 250px;
+  height: 350px;
   margin-left: 50%;
 }
 
@@ -62,12 +60,17 @@
     text-align: center;
     font-size: 17px;
   }
-  h3 {
+ .p {
     margin-left: 10px;
+    font-size: 25px;
+    width: 100%;
+    font-weight: bolder;
+    margin-top: 2% ;
   }
   label {
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 15px;
+   
   }
   .grid
 {
@@ -97,6 +100,12 @@
   display: flex;
   justify-content: center;
 }
-.trang {
-  max-width: 100%;
+.cb {
+  display: flex;
 }
+.size {
+  width: 120%;
+  font-size: 13px;
+}
+
+
