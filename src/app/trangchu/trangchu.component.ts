@@ -45,7 +45,6 @@ export class TrangChuComponent implements OnInit {
         this.sanPhams = data;
         console.log(this.sanPhams);
       });
-      alert(this.sanPhams);
     }
 
     addComment(): void {

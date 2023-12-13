@@ -1,7 +1,7 @@
 import { LoaiSanPham } from "../loai_san_pham/loai-san-pham";
 
 export class SanPham {
-    loaiSanPham?: LoaiSanPham;
+    loaiSanPham: LoaiSanPham= new LoaiSanPham();
     size?: string;
     mau?: string;
     moTa?: string;

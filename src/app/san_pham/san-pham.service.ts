@@ -14,4 +14,7 @@ export class SanPhamService {
   getSanPhams(): Observable<SanPham[]>{
     return this.http.get<SanPham[]>(`${this.baseUrl}`);
   }
+  createSanPhams(sanPham: SanPham): Observable<SanPham>{
+    return this.http.post<SanPham>(`${this.baseUrl}`, sanPham);
+  }
 }

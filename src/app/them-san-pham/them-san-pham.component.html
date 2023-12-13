@@ -2,30 +2,40 @@
     <div class="spimg">
         <img src="../assets/hinh/áo thun1.jpg" class="d-block w-100" alt="...">
     </div>
+    <form (ngSubmit)="onSubmit()">
     <div class="sp-container">
         <div class="sp-details">
-            <p>Tên sản phẩm:  <textarea  placeholder="tên sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"></textarea></p>
-        
-            <p>Giá sản phẩm: <textarea  placeholder="giá sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"></textarea></p> 
-        
-        </div>
-        <div>
-            <p class="sp-details">Màu:</p>
-            <select class="form-select form-select-sm "  aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; color: #000000; background-color: #cacaca; ">
-                <option selected>Màu</option>
-                <option value="1" style="color: #000000; background-color: #ffffff;" >Trắng</option>
-                <option value="2" style="color: #ffffff; background-color: #000000;">Đen</option>
-                <option value="3" style="color: #ffffff; background-color: #400000;">Đỏ</option>
-                <option value="4">...</option>
+            
+            <p>Loai sản phẩm:  </p>
+            <select  class="form-select form-select-sm" aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; color: #000000; background-color: #cacaca;" [(ngModel)]="sanPham.loaiSanPham.id_LoaiSanPham" name="loaiSanPham" >
+                
+                <option value="1" style="color: #000000; background-color: #ffffff;">T-Shirt</option>
+                <option value="2" style="color: #ffffff; background-color: #000000;">Jacket</option>
+                <option value="3" style="color: #ffffff; background-color: #400000;">Hoodie</option>
+                <option value="3" style="color: #ffffff; background-color: #400000;">Short</option>
+                <option value="3" style="color: #ffffff; background-color: #400000;">Trousers</option>
               </select>
+            <p>Tên sản phẩm:  </p>
+            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
+
+            <p>Giá sản phẩm: <input type="text" [(ngModel)]="sanPham.gia"  placeholder="giá sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;" name="gia"></p> 
+            <p>Hình ảnh:</p>
+            <input  type="file" (change)="handleFileInput($event) ">    
+            <p class="sp-details">Màu:</p>
+            <select class="form-select form-select-sm" aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; color: #000000; background-color: #cacaca;" [(ngModel)]="sanPham.mau" name="mau">
+                <option value="Trắng" style="color: #000000; background-color: #ffffff;">Trắng</option>
+                <option value="Đen" style="color: #ffffff; background-color: #000000;">Đen</option>
+                <option value="Đỏ" style="color: #ffffff; background-color: #400000;">Đỏ</option>
+              </select>
+                 
         </div>
         <br>
         <div class="form-floating">
             <p class="sp-details">Mô tả:</p>
-            <textarea class="form-control" placeholder="Mô tả" id="floatingTextarea2" style="height: 215px; width: 100%"></textarea>
+            <textarea [(ngModel)]="sanPham.moTa" name="mo_ta" class="form-control" placeholder="Mô tả" id="floatingTextarea2" style="height: 215px; width: 100%"></textarea>
         </div>
-            <button type="button" class="btn btn-secondary" style="margin: 10%;" >Submit<button>      
-                    
-          
+            <button type="submit" class="btn btn-secondary" style="margin: 10%;" >Submit</button>
+    </div>
+    </form>               
      
 
