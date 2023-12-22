@@ -8,6 +8,7 @@ import { SanPham } from './san-pham';
 })
 export class SanPhamService {
   private baseUrl="http://localhost:8080/api/SanPhams"
+  private sgetSanPhamsByLoaiSanPham="http://localhost:8080/api/SanPhams/getSanPhamByLoaiSanPham"
   
   constructor(private http: HttpClient) { }
 
@@ -16,5 +17,8 @@ export class SanPhamService {
   }
   createSanPhams(sanPham: SanPham): Observable<SanPham>{
     return this.http.post<SanPham>(`${this.baseUrl}`, sanPham);
+  }
+  getSanPhamsByLoaiSanPhamId(loaiSanPhamId: any): Observable<SanPham[]>{
+    return this.http.get<SanPham[]>(`${this.sgetSanPhamsByLoaiSanPham}?loaiSanPham=${loaiSanPhamId}`);
   }
 }

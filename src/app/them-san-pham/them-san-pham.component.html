@@ -1,7 +1,5 @@
 <div class="sp-grid">
-    <div class="spimg">
-        <img src="../assets/hinh/áo thun1.jpg" class="d-block w-100" alt="...">
-    </div>
+
     <form (ngSubmit)="onSubmit()">
     <div class="sp-container">
         <div class="sp-details">
@@ -12,12 +10,29 @@
                 <option value="1" style="color: #000000; background-color: #ffffff;">T-Shirt</option>
                 <option value="2" style="color: #ffffff; background-color: #000000;">Jacket</option>
                 <option value="3" style="color: #ffffff; background-color: #400000;">Hoodie</option>
-                <option value="3" style="color: #ffffff; background-color: #400000;">Short</option>
-                <option value="3" style="color: #ffffff; background-color: #400000;">Trousers</option>
+                <option value="4" style="color: #ffffff; background-color: #400000;">Short</option>
+                <option value="5" style="color: #ffffff; background-color: #400000;">Trousers</option>
               </select>
-            <p>Tên sản phẩm:  </p>
-            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
 
+            <p>Tên sản phẩm: 
+            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
+            </p>
+            <p>Size:
+                <input type="checkbox" id="size1" name="size1" value="S">
+                <label for="size1"> S</label>
+                <input type="checkbox" id="size2" name="size2" value="M">
+                <label for="size2"> M</label>
+                <input type="checkbox" id="size3" name="size3" value="L">
+                <label for="size3"> L</label>
+                <input type="checkbox" id="size4" name="size4" value="XL">
+                <label for="size4"> XL</label><br>
+            </p>
+            <p>Chất liệu
+            <input type="text" [(ngModel)]="sanPham.chatLieu" placeholder="chất lượng"  style="height: 40px; margin-left: 5%; width: 50%;" name="chat_lieu">
+            </p>
+            <p> Đối tượng: 
+            <input type="text" [(ngModel)]="sanPham.phuHop" placeholder="đối tượng"  style="height: 40px; margin-left: 5%; width: 50%;" name="doi_tuong">
+            </p>
             <p>Giá sản phẩm: <input type="text" [(ngModel)]="sanPham.gia"  placeholder="giá sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;" name="gia"></p> 
             <p>Hình ảnh:</p>
             <input  type="file" (change)="handleFileInput($event) ">    
@@ -26,8 +41,7 @@
                 <option value="Trắng" style="color: #000000; background-color: #ffffff;">Trắng</option>
                 <option value="Đen" style="color: #ffffff; background-color: #000000;">Đen</option>
                 <option value="Đỏ" style="color: #ffffff; background-color: #400000;">Đỏ</option>
-              </select>
-                 
+              </select> 
         </div>
         <br>
         <div class="form-floating">

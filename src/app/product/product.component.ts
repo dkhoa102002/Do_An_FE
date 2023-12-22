@@ -1,4 +1,7 @@
 import {  Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { SanPham } from '../san_pham/san-pham';
+import { HttpClient } from '@angular/common/http';
+import { SanPhamService } from '../san_pham/san-pham.service';
 
 
 @Component({
@@ -17,10 +20,18 @@ export class ProductComponent  {
   categories: string[] = ['All', 'T-Shirt', 'Jacket', 'Hoodie','Shorts','Trousers'];
   router: any;
   routerSubscription: any;
+  sanPhams?: SanPham[];
+  constructor(private http: HttpClient, private sanPhamSevice: SanPhamService) {}
   selectCategory(category: string) {
     this.selectedCategory = category;
     this.categorySelected.emit(category);
     this.categoryAndCateSelected.emit({ category: this.selectedCategory, cate: this.selectedCate });
+    console.log(this.selectedCategory);
+    
+    this.sanPhamSevice.getSanPhamsByLoaiSanPhamId(this.selectedCategory).subscribe(data => {
+      this.sanPhams = data;
+      console.log(this.sanPhams);
+    });
 
 }
 selectCategory2(category: string) {
@@ -32,7 +43,9 @@ selectCategory2(category: string) {
     this.selectedCate = cate;
     this.cateSelected.emit(cate);
     this.categoryAndCateSelected.emit({ category: this.selectedCategory, cate: this.selectedCate });
-
+    
+    
+    
   } 
 
     pageSize: number = 6;
@@ -69,9 +82,12 @@ selectCategory2(category: string) {
   }
 
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.sanPhamSevice.getSanPhams().subscribe(data => {
+      this.sanPhams = data;
+      console.log(this.sanPhams);
+    });
   }
-  
   navigateToForm() {
     this.router.navigate(['/trangchu']);
 

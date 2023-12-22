@@ -32,6 +32,7 @@ export class ThemSanPhamComponent {
     this.sanPham.duongDanAnh=this.imageSrc;
     this.sanPhamSevice?.createSanPhams(this.sanPham).subscribe(data => {
       console.log(data);
+      alert("Đã thêm sản phẩm thành công");
     },
     error => console.log(error));
   }
