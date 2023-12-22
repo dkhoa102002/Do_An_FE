@@ -11,64 +11,18 @@ import { SanPhamService } from '../san_pham/san-pham.service';
 })
 export class ProductComponent  {
  
-  @Input() selectedCategory: string = 'All';
-  @Input() selectedCate: string = 'All';
-  @Output() categorySelected = new EventEmitter<string>();
-  @Output() cateSelected = new EventEmitter<string>();
-  @Output() categoryAndCateSelected = new EventEmitter<{ category: string, cate: string }>();
-
-  categories: string[] = ['All', 'T-Shirt', 'Jacket', 'Hoodie','Shorts','Trousers'];
   router: any;
   routerSubscription: any;
   sanPhams?: SanPham[];
+  renderer: any;
+  isFolded: any;
+  el: any;
   constructor(private http: HttpClient, private sanPhamSevice: SanPhamService) {}
-  selectCategory(category: string) {
-    this.selectedCategory = category;
-    this.categorySelected.emit(category);
-    this.categoryAndCateSelected.emit({ category: this.selectedCategory, cate: this.selectedCate });
-    console.log(this.selectedCategory);
-    
-    this.sanPhamSevice.getSanPhamsByLoaiSanPhamId(this.selectedCategory).subscribe(data => {
-      this.sanPhams = data;
-      console.log(this.sanPhams);
-    });
-
-}
-selectCategory2(category: string) {
-  this.selectedCategory = category;
-  this.categorySelected.emit(category);}
-
-  cates: string[] = [ 'All','Nam', 'Nữ'];
-  selectCate(cate: string) {
-    this.selectedCate = cate;
-    this.cateSelected.emit(cate);
-    this.categoryAndCateSelected.emit({ category: this.selectedCategory, cate: this.selectedCate });
-    
-    
-    
-  } 
-
+  
     pageSize: number = 6;
   currentPage: number = 1;
   pages: number[] = [];
-  prevSelectedCategory: string | undefined;
-  prevSelectedCate: string | undefined;
-  prevSelectedCategoryandcate: string | undefined;
-
-  ngOnChanges() {
-    if (this.selectedCategory !== this.prevSelectedCategory) {
-      this.currentPage = 1;
-      this.prevSelectedCategory = this.selectedCategory;
-      this.prevSelectedCategoryandcate = this.selectedCategory;
-    }
-    if (this.selectedCate !== this.prevSelectedCate) {
-      this.currentPage = 1;
-      this.prevSelectedCate = this.selectedCate;
-      this.prevSelectedCategoryandcate = this.selectedCategory;
-
-    }
-    this.calculateTotalPages();
-  }
+  
 
   calculateTotalPages() {
     const totalPageCount = Math.ceil( this.pageSize);
@@ -80,7 +34,14 @@ selectCategory2(category: string) {
       this.currentPage = page;
     }
   }
-
+  toggleFold() {
+    this.isFolded = !this.isFolded;
+    if (this.isFolded) {
+      this.renderer.addClass(this.el.nativeElement, 'thanhben--fold');
+    } else {
+      this.renderer.removeClass(this.el.nativeElement, 'thanhben--fold');
+    }
+  }
 
   ngOnInit(): void {
     this.sanPhamSevice.getSanPhams().subscribe(data => {

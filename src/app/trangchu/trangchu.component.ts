@@ -54,14 +54,7 @@ export class TrangChuComponent implements OnInit {
       }
     }
     isFolded:  boolean = false;
-  toggleFold() {
-    this.isFolded = !this.isFolded;
-    if (this.isFolded) {
-      this.renderer.addClass(this.el.nativeElement, 'thanhben--fold');
-    } else {
-      this.renderer.removeClass(this.el.nativeElement, 'thanhben--fold');
-    }
-  }
+  
   navigateToFormLog() {
     this.router.navigate(['/chitietsp']);
   }

@@ -4,21 +4,20 @@
     <div class="sp-container">
         <div class="sp-details">
             
-            <p>Loai sản phẩm:  </p>
-            <select  class="form-select form-select-sm" aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; color: #000000; background-color: #cacaca;" [(ngModel)]="sanPham.loaiSanPham.id_LoaiSanPham" name="loaiSanPham" >
-                
-                <option value="1" style="color: #000000; background-color: #ffffff;">T-Shirt</option>
-                <option value="2" style="color: #ffffff; background-color: #000000;">Jacket</option>
-                <option value="3" style="color: #ffffff; background-color: #400000;">Hoodie</option>
-                <option value="4" style="color: #ffffff; background-color: #400000;">Short</option>
-                <option value="5" style="color: #ffffff; background-color: #400000;">Trousers</option>
+            <label>Loại sản phẩm:  </label>
+                <select  class="form-select form-select-sm test" aria-label="Loại sản phẩm" style="width: 50%; height: 40px; font-size: 15px; color: #000000; margin-left: 20%;" [(ngModel)]="sanPham.loaiSanPham.id_LoaiSanPham" name="loaiSanPham" >
+                <option value="1">T-Shirt</option>
+                <option value="2">Jacket</option>
+                <option value="3">Hoodie</option>
+                <option value="4">Short</option>
+                <option value="5">Trousers</option>
               </select>
-
+            <br>
             <p>Tên sản phẩm: 
-            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
+            <input type="text" [(ngModel)]="sanPham.tenSanPham" placeholder="tên sản phẩm" class="text" style="height: 40px; margin-left: 5%; width: 50%;"  [(ngModel)]="sanPham.tenSanPham" name="ten_san_pham">
             </p>
             <p>Size:
-                <input type="checkbox" id="size1" name="size1" value="S">
+                <input type="checkbox" id="size1" name="size1" value="S" style="margin-left: 15%;">
                 <label for="size1"> S</label>
                 <input type="checkbox" id="size2" name="size2" value="M">
                 <label for="size2"> M</label>
@@ -26,22 +25,22 @@
                 <label for="size3"> L</label>
                 <input type="checkbox" id="size4" name="size4" value="XL">
                 <label for="size4"> XL</label><br>
-            </p>
-            <p>Chất liệu
-            <input type="text" [(ngModel)]="sanPham.chatLieu" placeholder="chất lượng"  style="height: 40px; margin-left: 5%; width: 50%;" name="chat_lieu">
+            </p><br>
+            <p>Chất liệu:
+            <input type="text" [(ngModel)]="sanPham.chatLieu" placeholder="chất lượng" class="text" style="height: 40px; margin-left: 10%; width: 50%;" name="chat_lieu">
             </p>
             <p> Đối tượng: 
-            <input type="text" [(ngModel)]="sanPham.phuHop" placeholder="đối tượng"  style="height: 40px; margin-left: 5%; width: 50%;" name="doi_tuong">
+            <input type="text" [(ngModel)]="sanPham.phuHop" placeholder="đối tượng" class="text" style="height: 40px; margin-left: 8.5%; width: 50%;" name="doi_tuong">
             </p>
-            <p>Giá sản phẩm: <input type="text" [(ngModel)]="sanPham.gia"  placeholder="giá sản phẩm"  style="height: 40px; margin-left: 5%; width: 50%;" name="gia"></p> 
-            <p>Hình ảnh:</p>
-            <input  type="file" (change)="handleFileInput($event) ">    
-            <p class="sp-details">Màu:</p>
-            <select class="form-select form-select-sm" aria-label="Default select example" style="width: 50%; height: 30px; font-size: 15px; color: #000000; background-color: #cacaca;" [(ngModel)]="sanPham.mau" name="mau">
+            <p>Giá sản phẩm: <input type="text" [(ngModel)]="sanPham.gia"  placeholder="giá sản phẩm" class="text" style="height: 40px; margin-left: 5%; width: 50%;" name="gia"></p> 
+            <p>Hình ảnh:
+            <input  type="file" (change)="handleFileInput($event) ">    </p><br>
+            <p class="sp-details">Màu:
+            <select class="form-select form-select-sm" aria-label="Default select example" style="width: 50%; height: 40px; font-size: 15px; color: #000000; margin-left: 20%;" [(ngModel)]="sanPham.mau" name="mau">
                 <option value="Trắng" style="color: #000000; background-color: #ffffff;">Trắng</option>
                 <option value="Đen" style="color: #ffffff; background-color: #000000;">Đen</option>
                 <option value="Đỏ" style="color: #ffffff; background-color: #400000;">Đỏ</option>
-              </select> 
+              </select> </p>
         </div>
         <br>
         <div class="form-floating">
